@@ -1,7 +1,7 @@
 version: '2'
 services:
   moveit-demo:
-    image: gramaziokohler/ros-noetic-moveit
+    image: trtku0809/ros-noetic-moveit
     container_name: moveit-demo
     environment:
       - ROS_HOSTNAME=moveit-demo
@@ -24,7 +24,7 @@ services:
       - use_rviz:=false
 
   ros-core:
-    image: gramaziokohler/ros-noetic-moveit
+    image: trtku0809/ros-noetic-moveit
     container_name: ros-core
     ports:
       - "11311:11311"
@@ -32,7 +32,7 @@ services:
       - roscore
 
   ros-bridge:
-    image: gramaziokohler/ros-noetic-moveit
+    image: trtku0809/ros-noetic-moveit
     container_name: ros-bridge
     environment:
       - "ROS_HOSTNAME=ros-bridge"
@@ -48,7 +48,7 @@ services:
       - rosbridge_websocket.launch
 
   ros-fileserver:
-    image: gramaziokohler/ros-noetic-moveit
+    image: trtku0809/ros-noetic-moveit
     container_name: ros-fileserver
     environment:
       - ROS_HOSTNAME=ros-fileserver
@@ -63,6 +63,6 @@ services:
 
   # To use the web-based GUI, uncomment the following lines
   # gui:
-  #   image: gramaziokohler/novnc:latest
+  #   image: trtku0809/novnc:latest
   #   ports:
   #     - "8080:8080"
